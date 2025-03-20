@@ -61,4 +61,22 @@ level. When we run out of hardware resources, scale the number of nodes up/down 
 with a set of declarative object configuration files.
 
 
+******************** ARCHITECTURE of K8'S ***********************8
+--> When you install Kubernetes on a System, you are actually installing the following components. An API Server. An ETCD service. A kubelet service. A Container Runtime,
+Controllers and Schedulers.
+
+1. API SERVER: The API server acts as the front-end for kubernetes. The users, management devices, CLIs all talk to the API server to interact with the kubernetes cluster.
+   As tha cluster starts api servers starts and start commuicating with the worker nodes.
+2. ETCD Service: It stores all the data of k8's cluster in key-value format. it is like database.
+3. SCHEDULER: it is responsible for distributing work or containers across multiple nodes. handling pods ceeation and management on best config nodes.
+4. CONTROLLERS: The controllers are the brain behind orchestration, They are responsible for noticing and responding when nodes, containers or endpoints goes down.
+   The controllers makes decisions to bring up new containers in such cases.
+5. KUBELET: it is a agent which is present on worker nodes in cluster. it is responsible for making sure that containers are running on the nodes and communicating with master node. 
+6. CONTAINER RUNTIME: kubelet cannot create containers, there is software which is used to create/run containers like:(docker, crio, containerd).
+7. KUBE-PROXY: it is responsible for cont. to container communication within node or outside the node.  
+
+
+
+
+
 
